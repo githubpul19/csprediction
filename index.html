@@ -1,0 +1,82 @@
+{% load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WebApp</title>
+    <style>
+     body{
+          background-image:url("{%static 'concrete.jpg'%}")
+          background-repeat:no-repeat;
+          background-attachment:fixed;
+          background-size:cover;
+          }
+    </style>
+  </head>
+  <body>
+    <h1> Compressive Strength Prediction</h1>
+    <form action="{% url 'result' %}">
+      {% csrf_token %}
+
+      <p>Cement:</p>
+      <input type="text" name="n1">
+      <br>
+
+      <p>Sand:</p>
+      <input type="text" name="n2">
+      <br>
+
+      <p>Recycled Sand:</p>
+      <input type="text" name="n3">
+      <br>
+
+      <p>CA20:</p>
+      <input type="text" name="n4">
+      <br>
+
+      <p>CA10:</p>
+      <input type="text" name="n5">
+      <br>
+
+      <p>RCA20:</p>
+      <input type="text" name="n6">
+      <br>
+
+      <p>RCA10:</p>
+      <input type="text" name="n7">
+      <br>
+
+      <p>GGBS:</p>
+      <input type="text" name="n8">
+      <br>
+
+      <p>MK:</p>
+      <input type="text" name="n9">
+      <br>
+        <p>FA:</p>
+      <input type="text" name="n10">
+      <br>
+        <p>MSAND:</p>
+      <input type="text" name="n11">
+      <br>
+        <p>WATER:</p>
+      <input type="text" name="n12">
+      <br>
+        <p>ADMIXTURE:</p>
+      <input type="text" name="n13">
+      <br>
+        <p>WC_RATIO:</p>
+      <input type="text" name="n14">
+      <br>
+        <p>AGE:</p>
+      <input type="text" name="n15">
+      <br>
+        <p>SA_RATIO:</p>
+      <input type="text" name="n16">
+      <br>
+        <p>AC_RATIO:</p>
+      <input type="text" name="n17">
+      <br>
+      <input type="submit" value='Predict'>
+    </form>
+  </body>
+</html>

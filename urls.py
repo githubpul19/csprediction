@@ -13,7 +13,6 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
 from django.contrib import admin
 from django.urls import path
 
@@ -28,8 +27,17 @@ from django.urls import path
 from csprediction import views
 
 urlpatterns = [
+    path('csprediction/', csprediction.urls),
+
+    # add these to configure our home page (default view) and result web page
+    path('', views.home, name='home'),
+    path('result/', views.result, name='result'),
+    ]
+
+urlpatterns = [
     path('admin/', admin.site.urls),
 
     # add these to configure our home page (default view) and result web page
     path('', views.home, name='home'),
-    path('result/', views.result, name='result'),]
+    path('result/', views.result, name='result'),
+    ]
